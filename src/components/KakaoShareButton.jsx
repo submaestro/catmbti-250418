@@ -7,24 +7,24 @@ const KakaoShareButton = () => {
   const url = "https://catmbti-submaestro.netlify.app/";
   const resultURL = window.location.href;
 
-  console.log("Test: ", url, resultURL);
-
   useEffect(() => {
     Kakao.cleanup();
     Kakao.init("ba2cb123092bc707604a9ba2f7d0ff0c");
+    Kakao.isInitialized();
   }, []);
 
   const sharekakao = () => {
     Kakao.Share.sendDefault({
       objectType: "feed",
       content: {
-        title: "오늘의 디저트",
-        description: "아메리카노, 빵, 케익",
+        title: "예비집사 판별기 결과",
+        description:
+          "예비집사님이 고양이를 키운다면 잘맞는 고양이는 먼치킨입니다.",
         imageUrl:
           "https://mud-kage.kakao.com/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg",
         link: {
-          mobileWebUrl: "https://developers.kakao.com",
-          webUrl: "https://developers.kakao.com",
+          mobileWebUrl: resultURL,
+          webUrl: resultURL,
         },
       },
       itemContent: {
@@ -67,17 +67,10 @@ const KakaoShareButton = () => {
       },
       buttons: [
         {
-          title: "웹으로 이동",
+          title: "나도 테스트 하러가기",
           link: {
-            mobileWebUrl: "https://developers.kakao.com",
-            webUrl: "https://developers.kakao.com",
-          },
-        },
-        {
-          title: "앱으로 이동",
-          link: {
-            mobileWebUrl: "https://developers.kakao.com",
-            webUrl: "https://developers.kakao.com",
+            mobileWebUrl: url,
+            webUrl: url,
           },
         },
       ],
