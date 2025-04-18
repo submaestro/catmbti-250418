@@ -51,9 +51,12 @@ const Title = styled.div`
 `;
 
 const LogoImg = styled.div`
+  width: 350px;
+  height: 350px;
   & > img {
-    width: 350px;
-    height: 350px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border: 4px solid var(--border-color);
     border-radius: 50%;
   }
@@ -69,7 +72,7 @@ const Desc = styled.div`
 
 const ButtonGroup = styled.div`
   display: flex;
-  gap: 10px;
+  gap: 14px;
   & > button[type="button"] {
     font-size: 2rem;
   }

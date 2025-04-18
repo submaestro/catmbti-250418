@@ -6,12 +6,12 @@ const { Kakao } = window;
 const KakaoShareButton = ({ data }) => {
   console.log(data);
 
-  const url = "https://catmbti-submaestro.netlify.app/";
+  const url = "https://dogmbti-cat.netlify.app/";
   const resultURL = window.location.href;
 
   useEffect(() => {
     Kakao.cleanup();
-    Kakao.init("ba2cb123092bc707604a9ba2f7d0ff0c");
+    Kakao.init("47087443b486b60aa18487a0f86ecf53");
     Kakao.isInitialized();
   }, []);
 
@@ -20,7 +20,7 @@ const KakaoShareButton = ({ data }) => {
       objectType: "feed",
       content: {
         title: "예비집사 판별기 결과",
-        description: `예비집사님이 고양이를 키운다면 잘맞는 고양이는 ${data.name}입니다.`,
+        description: `예비집사님이 고양이를 키운다면 잘 맞는 고양이는 ${data.name}입니다.`,
         imageUrl: `${url}${data.image}`,
         link: {
           mobileWebUrl: resultURL,
